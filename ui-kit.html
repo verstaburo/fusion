@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fusion | UI-кит</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
+    <link href="assets/styles/app.min.css" rel="stylesheet">
+    <script src="assets/scripts/libs/jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(window).on('load', function() {
+            $('.ui-kit__section').each(function(i) {
+                var id = 'section' + i;
+                var name = $(this).find('.ui-kit__section-head h2').text();
+                var li = $('<li></li>');
+                var a = $('<a></a>');
+
+                a.attr('href', '#' + id).text(name).addClass('js-anchor');
+                li.append(a);
+
+                $('.ui-kit__navigation__list').append(li);
+                $(this).attr('id', id);
+            });
+        });
+    </script>
+    <div class="ui-kit">
+        <div class="ui-kit__navigation">
+            <ul class="ui-kit__navigation__list"></ul>
+        </div>
+        <section class="ui-kit__head">
+            <div class="container"><img class="ui-kit__logo" src="assets/images/logo_square.svg" alt="Логотип проекта" style="background: white; padding: 5px;" title="" /></div>
+        </section>
+        <section class="ui-kit__section ui-kit__section_grid">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Сетка</h2>
+                    <div class="ui-kit__description">
+                        <p>Отступы слева и справа от экрана: 22px, 30px, 15px</p>
+                        <p>Максимальная ширина контейнера: 1440px ($container-width)</p>
+                        <p>Брейкпойнты: 1440, 768</p>
+                        <p>Колонок: 12</p>
+                        <p>Горизонтальное расстояние между колонками: 110px</p>
+                        <p>Вертикальное расстояние между колонками: 37px</p>
+                        <p>Переменные: styles/helpers/_variables.scss</p>
+                        <p>Блок: blocks/grid/</p>
+                    </div>
+                    <div class="ui-kit__description">
+                        <p><b>Возможные варианты использования</b></p>
+                        <p>+col(12) агалогично +col({ xl: 12 })</p>
+                        <p>+col({ xl: 8, lg: 6, sm: 7 })</p>
+                        <p><span>Промежуточные брейкпоинты указывать не обязательно</span><br><span>При следующей записи - блок будет занимать 6 колонок на всех разрешениях, а на самом маленьком <i>(xs)</i> 12</span></p>
+                        <p>+col({ xl: 6, xs: 12 })</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col_xl_4 grid__col_lg_6 grid__col_sm_12"></div>
+                        <div class="grid__col grid__col_xl_4 grid__col_lg_6 grid__col_sm_12"></div>
+                        <div class="grid__col grid__col_xl_4 grid__col_lg_12"></div>
+                        <div class="grid__col grid__col_xl_6 grid__col_lg_12"></div>
+                        <div class="grid__col grid__col_xl_6 grid__col_lg_12"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Цвета сайта</h2>
+                    <div class="ui-kit__blockpath">Переменные находятся в файле styles/helpers/_variables.scss</div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="ui-kit__elements-list">
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Шрифты</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Переменные находятся в файле styles/helpers/_variables.scss</p>
+                        <p>Шрифты подключены в styles/helpers/_fonts.scss</p>
+                    </div>
+                    <div class="ui-kit__description">
+                        <p>Основной шрифт: Futura ($font-main), font-weight: 300, 400, 500, 600</p>
+                        <p>Дополнительный шрифт: Helvetica Neue ($font-second), font-weight: 400</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Кнопки</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Блок: blocks/button/button</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="ui-kit__elements-list"><a class="button"><span>Кнопка</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg></a></div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Шапка</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/header/header</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="header">
+                    <div class="container"><a class="header__logo" href="./"><img src="assets/images/logo.png" /></a>
+                        <div class="header__column">
+                            <div class="header__burger-button"><span></span></div>
+                            <div class="header__menu"><a class="header__link js-anchor" href="./#footer">Об агентстве</a><a class="header__link js-anchor" href="./#footer">Контакты</a><a class="header__link js-anchor js-filter" href="./#works" data-filter="all">Все кейсы</a></div>
+                            <div class="header__filters"><a class="header__filter js-filter" href="./#filter-event" data-filter="event">Event</a><a class="header__filter js-filter" href="./#filter-pr" data-filter="pr">PR</a><a class="header__filter js-filter" href="./#filter-smm" data-filter="smm">SMM</a><a class="header__filter js-filter" href="./#filter-btl" data-filter="btl">BTL</a><a class="header__filter js-filter" href="./#filter-creative" data-filter="creative">Creative</a><a class="header__filter js-filter" href="./#filter-strategy" data-filter="strategy">Strategy</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Футер</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/footer/footer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="footer" id="footer">
+                    <div class="container">
+                        <div class="grid">
+                            <div class="grid__col grid__col_xl_0 footer__col_about">
+                                <div class="footer__section">
+                                    <h3 class="footer__title">О нас</h3>
+                                    <div class="footer__content">
+                                        <p>Мы - независимое агентство маркетинговых коммуникаций и креативная студия. 2011 – ∞</p>
+                                        <p>Создаем одинаково интересный контент, креативный дизайн и маркетинговые мероприятия, умеем обращаться с соцсетями, предлагаем нестандартные решения, снимаем живые фото и видео. Креатив, продюсирование, чувство юмора, дизайн, стратегии, SMM, PR, digital, шарм, experiential marketing, special events – для нас это не набор инструментов.</p>
+                                        <p>Это образ жизни.</p><br />
+                                        <p>Любим всех своих клиентов также сильно как прохладное розе.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid__col grid__col_xl_0 footer__col_contacts">
+                                <div class="footer__section">
+                                    <h3 class="footer__title">Контакты</h3>
+                                    <div class="footer__content">
+                                        <p>+7 (499) 641 35 35</p>
+                                        <p>115035, Москва, ул. Садовническая 72, стр. 1</p><br />
+                                        <p>Для брифов и предложений</p>
+                                        <p>Creative / Strategy: <a href="mailto:moiseeva@fusionagency.ru">moiseeva@fusionagency.ru</a></p>
+                                        <p>BTL / Event: <a href="mailto:volkov@fusionagency.ru">volkov@fusionagency.ru</a></p>
+                                        <p>SMM / PR: <a href="mailto:zabrodskaya@fusionagency.ru">zabrodskaya@fusionagency.ru</a></p>
+                                        <p>Для резюме: <a href="mailto:moiseeva@fusionagency.ru">moiseeva@fusionagency.ru</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid__col grid__col_xl_0 footer__col_logo">
+                                <div class="footer__logo"><img src="assets/images/logo_square.svg" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Работы</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/works/works</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <section class="works" id="works">
+                    <div class="container">
+                        <div class="works__grid js-filter-works js-works">
+                            <div class="works__sizer js-work-sizer"></div><a class="works__work works__work_height_1 works__work_width_1 js-work" href="work.html" data-work-type="creative"><span class="works__wrapper"><img src="assets/images/works/work_2.jpg" /></span></a><a class="works__work works__work_height_2 works__work_width_2 js-work" href="work.html" data-work-type="btl"><span class="works__wrapper"><img src="assets/images/works/work_3.jpg" /></span></a><a class="works__work works__work_height_1 works__work_width_1 js-work" href="work.html" data-work-type="event"><span class="works__wrapper"><img src="assets/images/works/work_1.jpg" /></span></a><a class="works__work works__work_height_1 works__work_width_1 js-work" href="work.html" data-work-type="smm"><span class="works__wrapper"><img src="assets/images/works/work_5.jpg" /></span></a><a class="works__work works__work_height_2 works__work_width_2 js-work" href="work.html" data-work-type="pr"><span class="works__wrapper"><img src="assets/images/works/work_4.jpg" /></span></a><a class="works__work works__work_height_2 works__work_width_1 js-work" href="work.html" data-work-type="event"><span class="works__wrapper"><img src="assets/images/works/work_6.jpg" /></span></a><a class="works__work works__work_height_1 works__work_width_1 js-work" href="work.html" data-work-type="btl"><span class="works__wrapper"><img src="assets/images/works/work_8.jpg" /></span></a><a class="works__work works__work_height_2 works__work_width_1 js-work" href="work.html" data-work-type="creative"><span class="works__wrapper"><img src="assets/images/works/work_10.jpg" /></span></a><a class="works__work works__work_height_1 works__work_width_1 js-work" href="work.html" data-work-type="strategy"><span class="works__wrapper"><img src="assets/images/works/work_7.jpg" /></span></a><a class="works__work works__work_height_1 works__work_width_1 js-work" href="work.html" data-work-type="smm"><span class="works__wrapper"><img src="assets/images/works/work_9.jpg" /></span></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Информация о проекте</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/project/project</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <section class="project">
+                    <div class="container">
+                        <div class="project__grid">
+                            <div class="project__col project__col_info">
+                                <ul class="project__list">
+                                    <li class="project__item">
+                                        <h4 class="project__list-title">Клиент:</h4>
+                                        <p class="project__list-content"><b>FUJIFILM</b></p>
+                                    </li>
+                                    <li class="project__item">
+                                        <h4 class="project__list-title">Дата выпуска:</h4>
+                                        <p class="project__list-content"><b>20 марта 2018 г.</b></p>
+                                    </li>
+                                    <li class="project__item">
+                                        <h4 class="project__list-title">Что сделано:</h4>
+                                        <p class="project__list-content">Платформа бренда, нейминг, фирменный стиль, гайдлайн.</p>
+                                    </li>
+                                </ul>
+                                <div class="project__badges">
+                                    <div class="project__badge"><img src="assets/images/badges/badge_1.jpg" /></div>
+                                    <div class="project__badge"><img src="assets/images/badges/badge_2.jpg" /></div>
+                                </div>
+                            </div>
+                            <div class="project__col project__col_texts">
+                                <h1 class="project__title">Промо-кампания “РЕАЛИЗУЙ МОМЕНТ”</h1>
+                                <div class="project__content">
+                                    <p>В России проходит Чемпионат Мира по футболу - это отличный повод сделать незабываемый кадр и распечатать фотографию, чтобы радость и гордость от победы были ближе. Реализуй момент вместе с Fujifilm - печатай больше фотографий и получай призы! В России проходит Чемпионат Мира по футболу - это отличный повод сделать незабываемый кадр и распечатать фотографию, чтобы радость и гордость от победы были ближе. Реализуй момент вместе с Fujifilm - печатай больше фотографий и получай призы!</p>
+                                    <p>Реализуй момент вместе с Fujifilm - печатай больше фотографий и получай призы!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </div>
+    <script src="assets/scripts/app.min.js"></script>
+    <script src="assets/scripts/main.js"></script>
+</body>
+
+</html>
