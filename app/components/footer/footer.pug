@@ -1,0 +1,44 @@
+mixin footer()
+  +b.footer#footer&attributes(attributes)
+    .container
+      +grid
+        +col(0).footer__col_about
+          +e.section
+            +e.H3.title О нас
+            +e.content
+              p Мы - независимое агентство маркетинговых коммуникаций и креативная студия. 2011 – ∞
+              p Создаем одинаково интересный контент, креативный дизайн и маркетинговые мероприятия, умеем обращаться с соцсетями, предлагаем нестандартные решения, снимаем живые фото и видео. Креатив, продюсирование, чувство юмора, дизайн, стратегии, SMM, PR, digital, шарм, experiential marketing, special events – для нас это не набор инструментов.
+              p Это образ жизни.
+              br
+              p Любим всех своих клиентов также сильно как прохладное розе.
+
+        +col(0).footer__col_contacts
+          +e.section
+            +e.H3.title Контакты
+            +e.content
+              p +7 (499) 641 35 35
+              p 115035, Москва, ул. Садовническая 72, стр. 1
+              br
+              p Для брифов и предложений
+              p Creative / Strategy: <a href="mailto:moiseeva@fusionagency.ru">moiseeva@fusionagency.ru</a>
+              p BTL / Event: <a href="mailto:volkov@fusionagency.ru">volkov@fusionagency.ru</a>
+              p SMM / PR: <a href="mailto:zabrodskaya@fusionagency.ru">zabrodskaya@fusionagency.ru</a>
+              p Для резюме: <a href="mailto:moiseeva@fusionagency.ru">moiseeva@fusionagency.ru</a>
+
+        +col(0).footer__col_logo
+          +e.logo
+            img(src="assets/images/logo_square.svg")
+
+mixin ui-kit-footer()
+  +ui-section
+    +ui-section-head
+      +ui-title Футер
+      +ui-path
+        p Компонент: components/footer/footer
+
+    +ui-section-content(true)
+      +footer
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

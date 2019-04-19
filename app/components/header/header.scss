@@ -1,0 +1,96 @@
+.header {
+  display: block;
+
+  @include rule(padding, (xl: 37px 0, lg: 43px 0, sm: 39px 0));
+  @include rule(text-align, (sm: center));
+
+  $b: &;
+
+  .container {
+    display: flex;
+
+    @include rule(align-items, (xl: center, lg: flex-start, sm: center));
+    @include rule(flex-direction, (xl: row-reverse, lg: column));
+
+    justify-content: space-between;
+  }
+
+  &__column {
+    @include rule(margin-right, (xl: 60px, lg: 0));
+    @include rule(margin-top, (lg: 30px, sm: 35px));
+    @include rule(width, (sm: 100%));
+  }
+
+  &__logo {
+    display: block;
+
+    img {
+      @include rule(width, (xl: 737px, lg: 682px, sm: 290px));
+    }
+  }
+
+  &__menu {
+    @include rule(display, (xl: flex));
+
+    align-items: center;
+
+    @include rule(justify-content, (xl: space-between, sm: center));
+    @include rule(flex-wrap, (sm: wrap));
+    @include rule(margin, (sm: -13px -22px 0));
+  }
+
+  &__link {
+    @include rule(font-size, (xl: 24px, sm: 20px));
+
+    line-height: 1;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+    color: $color-grey;
+    transition: color $ease-main;
+    display: block;
+
+    &.is-active, &:hover {
+      color: white;
+    }
+
+    &:not(:last-child) {
+      @include rule(margin-right, (xl: 50px, lg: 49px, sm: 22px));
+    }
+
+    @include rule(margin, (sm: 22px 22px 0));
+  }
+
+  &__filters {
+    @include rule(display, (xl: flex, sm: block));
+
+    align-items: center;
+    justify-content: space-between;
+
+    @include rule(margin-top, (xl: 27px, sm: 36px));
+    @include rule(flex-wrap, (sm: wrap));
+    @include rule(margin-left, (sm: -21px));
+    @include rule(margin-right, (sm: -21px));
+  }
+
+  &__filter {
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+    color: $color-grey;
+    transition: color $ease-main;
+    display: inline-block;
+
+    @include rule(margin, (sm: 12px 21px));
+
+    &.is-active, &:hover {
+      color: white;
+    }
+
+    &:not(:last-child) {
+      @include rule(margin-right, (xl: 50px, lg: 41px, sm: 21px));
+    }
+  }
+}

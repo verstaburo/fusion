@@ -1,0 +1,32 @@
+[
+  {
+    "text": "Event",
+    "href": "./#filter-event",
+    "filter": "event"
+  },
+  {
+    "text": "PR",
+    "href": "./#filter-pr",
+    "filter": "pr"
+  },
+  {
+    "text": "SMM",
+    "href": "./#filter-smm",
+    "filter": "smm"
+  },
+  {
+    "text": "BTL",
+    "href": "./#filter-btl",
+    "filter": "btl"
+  },
+  {
+    "text": "Creative",
+    "href": "./#filter-creative",
+    "filter": "creative"
+  },
+  {
+    "text": "Strategy",
+    "href": "./#filter-strategy",
+    "filter": "strategy"
+  }
+]

@@ -1,28 +1,73 @@
 .button {
   display: inline-block;
-  padding: 0 15px;
+
+  @include rule(padding, (xl: 0 31px 0 0, lg: 0 25px 0 0, sm: 0 18px 0 0));
+
   border: 0;
   vertical-align: middle;
   box-sizing: border-box;
-  background-color: $color-main;
-  transition: opacity $ease-main;
+  background-color: transparent;
+  transition: color $ease-main, fill $ease-main;
   cursor: pointer;
-  font-size: 14px;
-  line-height: 40px;
-  height: 40px;
+
+  @include rule(font-size, (xl: 24px, lg: 20px, sm: 14px));
+
+  line-height: 1;
+  height: auto;
   color: white;
+  fill: white;
   appearance: none;
-  border-radius: 3px;
+  border-radius: 0;
+  text-transform: uppercase;
+  position: relative;
+  letter-spacing: .025em;
+  font-weight: 500;
 
   $b: &;
 
-  &[disabled] {
-    opacity: .5;
-    cursor: not-allowed;
+  svg {
+    transition: transform $ease-main;
+
+    @include rule(width, (xl: 7px, sm: 6px));
+    @include rule(height, (xl: 13px, sm: 12px));
+
+    position: absolute;
+
+    @include rule(right, (xl: 5px, lg: 0));
+
+    top: 0;
+
+    @include rule(bottom, (xl: 1px, lg: 3px));
+
+    margin: auto;
   }
 
   &:hover {
-    opacity: .5;
+    color: $color-main;
+    fill: $color-main;
+
+    svg {
+      transform: translate3d(5px, 0, 0);
+    }
+  }
+
+  .buttons & {
+
+    &:last-child {
+      margin-left: auto;
+    }
   }
 }
 
+.buttons {
+  display: block;
+
+  &:not(:first-child) {
+    @include rule(margin-top, (xl: 29px, lg: 18px, sm: 14px));
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

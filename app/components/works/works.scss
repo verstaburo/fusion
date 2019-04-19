@@ -1,0 +1,121 @@
+.works {
+  display: block;
+
+  $b: &;
+
+  &:not(:first-child) {
+    @include rule(margin-top, (xl: 80px, lg: 32px, sm: 27px));
+  }
+
+  &__grid {
+    font-size: 0;
+    margin: -9px;
+    transition: height $ease-main;
+  }
+
+  &__sizer {
+    @include rule(width, (xl: 33.333%, lg: 50%, sm: 100%));
+
+    #{$b}__grid_twocol & {
+      @include rule(width, (xl: 50%, sm: 100%));
+    }
+  }
+
+  &__work {
+    box-sizing: border-box;
+
+    @include rule(padding, (xl: 9px, sm: 10px));
+
+    display: block;
+
+    &.is-hidden {
+      opacity: 0;
+    }
+
+    img {
+      @include fill-img;
+    }
+
+    &_width {
+
+      &_1 {
+        @include rule(width, (xl: 33.333%, lg: 50%, sm: 100%));
+
+        #{$b}__grid_twocol & {
+          @include rule(width, (xl: 50%, sm: 100%));
+        }
+      }
+
+      &_2 {
+        @include rule(width, (xl: 66.666%, lg: 100%));
+
+        #{$b}__grid_twocol & {
+          width: 100%;
+        }
+      }
+    }
+
+    &_height {
+
+      &_1 {
+        @include rule(height, (xl: 270px, sm: 235px));
+
+        #{$b}__grid_twocol & {
+          @include rule(height, (xl: 394px, lg: 234px));
+        }
+      }
+
+      &_2 {
+        @include rule(height, (xl: 540px, sm: 235px));
+
+        #{$b}__grid_twocol & {
+          @include rule(height, (xl: 738px, lg: 467px, sm: 235px));
+        }
+      }
+    }
+  }
+
+  &__play {
+    @include rule(width, (xl: 110px, lg: 50px));
+    @include rule(height, (xl: 110px, lg: 50px));
+
+    position: absolute;
+    border-radius: 100px;
+    background-color: $color-grey-2;
+    z-index: 2;
+    transition: background-color $ease-main;
+
+    @include center-image;
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+
+      @include rule(border-width, (xl: 27px 0 27px 44px, lg: 13px 0 13px 22px));
+
+      border-color: transparent transparent transparent #fff;
+
+      @include center-image;
+      @include rule(left, (xl: 14px, lg: 7px));
+    }
+
+    #{$b}__work[href]:hover & {
+      background-color: $color-main;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    transition: opacity $ease-main;
+
+    #{$b}__work[href]:hover & {
+      opacity: .35;
+    }
+  }
+}

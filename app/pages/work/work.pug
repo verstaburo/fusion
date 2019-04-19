@@ -1,0 +1,10 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Проект'
+
+block content
+  +project
+  +works(false, true)
+  +buttons
+    +button()(href="work.html") Следующий проект

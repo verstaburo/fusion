@@ -1,0 +1,78 @@
+.footer {
+  display: block;
+  background-color: white;
+  color: $color-black;
+
+  @include rule(padding-top, (xl: 39px, sm: 28px));
+  @include rule(padding-bottom, (xl: 57px, lg: 62px, sm: 32px));
+
+  $b: &;
+
+  &__section {
+
+  }
+
+  &__logo {
+
+    img {
+      @include rule(width, (xl: 225px, lg: 157px));
+    }
+  }
+
+  &__col {
+
+    &_about {
+      @include rule(flex, (xl: 1, lg: 0 auto));
+      @include rule(width, (lg: 100%));
+    }
+
+    &_contacts {
+      @include rule(max-width, (xl: 440px, lg: none));
+      @include rule(order, (lg: -2));
+      @include rule(flex, (lg: 1));
+    }
+
+    &_logo {
+      @include rule(order, (lg: -1));
+      @include rule(display, (sm: none));
+    }
+  }
+
+  &__title {
+    @include rule(font-size, (xl: 20px, sm: 18px));
+
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 2px;
+      background-color: $color-black;
+
+      @include rule(margin-top, (xl: 17px, sm: 18px));
+    }
+  }
+
+  &__content {
+    font-size: 14px;
+    line-height: 20px;
+    color: black;
+    font-family: $font-second;
+
+    @include rule(margin-top, (xl: 17px, sm: 19px));
+
+    letter-spacing: .015em;
+
+    a {
+      color: $color-blue;
+      transition: color $ease-main;
+
+      &:hover {
+        color: $color-main;
+      }
+    }
+  }
+}

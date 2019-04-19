@@ -1,0 +1,18 @@
+[
+  {
+    "text": "Об агентстве",
+    "href": "./#footer",
+    "anchor": true
+  },
+  {
+    "text": "Контакты",
+    "href": "./#footer",
+    "anchor": true
+  },
+  {
+    "text": "Все кейсы",
+    "href": "./#works",
+    "anchor": true,
+    "filter": true
+  }
+]
