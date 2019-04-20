@@ -17,17 +17,19 @@
 }
 
 .fancybox-button {
-  @include rule(width, (xl: 67px, lg: 50px));
-  @include rule(height, (xl: 67px, lg: 50px));
+  @include rule(width, (xl: 67/$x*100vw, lg: 50/$l*100vw, sm: 50/$s*100vw));
+  @include rule(height, (xl: 67/$x*100vw, lg: 50/$l*100vw, sm: 50/$s*100vw));
 
   background: black;
   box-sizing: border-box;
 
-  @include rule(padding, (xl: 14px, lg: 10px));
+  @include rule(padding, (xl: 14/$x*100vw, lg: 10/$l*100vw, sm: 10/$s*100vw));
 
   stroke: white;
   fill: transparent;
-  stroke-width: 3px;
+
+  @include rule(stroke-width, (xl: 3/$x*100vw, lg: 3/$l*100vw, sm: 3/$s*100vw));
+
   transition: stroke $ease-main;
 
   &:hover {
@@ -36,5 +38,5 @@
 }
 
 .fancybox-slide {
-  @include rule(padding, (xl: 44px, lg: 30px, sm: 0));
+  @include rule(padding, (xl: 44/$x*100vw, lg: 30/$l*100vw, sm: 0));
 }

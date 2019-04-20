@@ -4,12 +4,14 @@
   $b: &;
 
   &:not(:first-child) {
-    @include rule(margin-top, (xl: 80px, lg: 32px, sm: 27px));
+    @include rule(margin-top, (xl: 80/$x*100vw, lg: 32/$l*100vw, sm: 27/$s*100vw));
   }
 
   &__grid {
     font-size: 0;
-    margin: -9px;
+
+    @include rule(margin, (xl: -9/$x*100vw, lg: -9/$l*100vw, sm: -9/$s*100vw));
+
     transition: height $ease-main;
   }
 
@@ -24,7 +26,7 @@
   &__work {
     box-sizing: border-box;
 
-    @include rule(padding, (xl: 9px, sm: 10px));
+    @include rule(padding, (xl: 9/$x*100vw, lg: 9/$l*100vw, sm: 10/$s*100vw));
 
     display: block;
 
@@ -58,29 +60,31 @@
     &_height {
 
       &_1 {
-        @include rule(height, (xl: 270px, sm: 235px));
+        @include rule(height, (xl: 270/$x*100vw, lg: 270/$l*100vw, sm: 234/$s*100vw));
 
         #{$b}__grid_twocol & {
-          @include rule(height, (xl: 394px, lg: 234px));
+          @include rule(height, (xl: 394/$x*100vw, lg: 234/$l*100vw, sm: 234/$s*100vw));
         }
       }
 
       &_2 {
-        @include rule(height, (xl: 540px, sm: 235px));
+        @include rule(height, (xl: 540/$x*100vw, lg: 540/$l*100vw, sm: 234/$s*100vw));
 
         #{$b}__grid_twocol & {
-          @include rule(height, (xl: 738px, lg: 467px, sm: 235px));
+          @include rule(height, (xl: 738/$x*100vw, lg: 467/$l*100vw, sm: 234/$s*100vw));
         }
       }
     }
   }
 
   &__play {
-    @include rule(width, (xl: 110px, lg: 50px));
-    @include rule(height, (xl: 110px, lg: 50px));
+    @include rule(width, (xl: 110/$x*100vw, lg: 50/$l*100vw, sm: 50/$s*100vw));
+    @include rule(height, (xl: 110/$x*100vw, lg: 50/$l*100vw, sm: 50/$s*100vw));
 
     position: absolute;
-    border-radius: 100px;
+
+    @include rule(border-radius, (xl: 100/$x*100vw, lg: 100/$l*100vw, sm: 100/$s*100vw));
+
     background-color: $color-grey-2;
     z-index: 2;
     transition: background-color $ease-main;
@@ -93,12 +97,12 @@
       height: 0;
       border-style: solid;
 
-      @include rule(border-width, (xl: 27px 0 27px 44px, lg: 13px 0 13px 22px));
+      @include rule(border-width, (xl: 27/$x*100vw 0 27/$x*100vw 44/$x*100vw, lg: 13/$l*100vw 0 13/$l*100vw 22/$l*100vw, sm: 13/$s*100vw 0 13/$s*100vw 22/$s*100vw));
 
       border-color: transparent transparent transparent #fff;
 
       @include center-image;
-      @include rule(left, (xl: 14px, lg: 7px));
+      @include rule(left, (xl: 14/$x*100vw, lg: 7/$l*100vw, sm: 7/$s*100vw));
     }
 
     #{$b}__work[href]:hover & {

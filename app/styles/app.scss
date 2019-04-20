@@ -23,8 +23,8 @@ body {
 .container {
   width: $container-width;
 
-  @include rule(padding-left, (xl: $container-padding, lg: 30px, sm: 15px));
-  @include rule(padding-right, (xl: $container-padding, lg: 30px, sm: 15px));
+  @include rule(padding-left, (xl: $container-padding/$x*100vw, lg: 30/$l*100vw, sm: 15/$s*100vw));
+  @include rule(padding-right, (xl: $container-padding/$x*100vw, lg: 30/$l*100vw, sm: 15/$s*100vw));
 
   margin-left: auto;
   margin-right: auto;
@@ -39,6 +39,6 @@ body {
 .main {
   margin-bottom: auto;
 
-  @include rule(padding-top, (xl: 41px, lg: 16px, sm: 9px));
-  @include rule(padding-bottom, (xl: 41px, lg: 38px));
+  @include rule(padding-top, (xl: 41/$x*100vw, lg: 16/$l*100vw, sm: 9/$s*100vw));
+  @include rule(padding-bottom, (xl: 41/$x*100vw, lg: 38/$l*100vw, sm: 38/$s*100vw));
 }

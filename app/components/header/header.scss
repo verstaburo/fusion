@@ -1,7 +1,7 @@
 .header {
   display: block;
 
-  @include rule(padding, (xl: 37px 0, lg: 43px 0, sm: 39px 0));
+  @include rule(padding, (xl: 37/$x*100vw 0, lg: 43/$l*100vw 0, sm: 39/$s*100vw 0));
   @include rule(text-align, (sm: center));
 
   $b: &;
@@ -16,8 +16,8 @@
   }
 
   &__column {
-    @include rule(margin-right, (xl: 60px, lg: 0));
-    @include rule(margin-top, (lg: 30px, sm: 35px));
+    @include rule(margin-right, (xl: 60/$x*100vw, lg: 0));
+    @include rule(margin-top, (lg: 30/$l*100vw, sm: 35/$s*100vw));
     @include rule(width, (sm: 100%));
   }
 
@@ -25,7 +25,7 @@
     display: block;
 
     img {
-      @include rule(width, (xl: 737px, lg: 682px, sm: 290px));
+      @include rule(width, (xl: 737/$x*100vw, lg: 682/$l*100vw, sm: 290/$s*100vw));
     }
   }
 
@@ -36,11 +36,11 @@
 
     @include rule(justify-content, (xl: space-between, sm: center));
     @include rule(flex-wrap, (sm: wrap));
-    @include rule(margin, (sm: -13px -22px 0));
+    @include rule(margin, (sm: -13/$s*100vw -22/$s*100vw 0));
   }
 
   &__link {
-    @include rule(font-size, (xl: 24px, sm: 20px));
+    @include rule(font-size, (xl: 24/$x*100vw, lg: 24/$l*100vw, sm: 20/$s*100vw));
 
     line-height: 1;
     font-weight: 500;
@@ -55,10 +55,10 @@
     }
 
     &:not(:last-child) {
-      @include rule(margin-right, (xl: 50px, lg: 49px, sm: 22px));
+      @include rule(margin-right, (xl: 50/$x*100vw, lg: 49/$l*100vw, sm: 22/$s*100vw));
     }
 
-    @include rule(margin, (sm: 22px 22px 0));
+    @include rule(margin, (sm: 22/$s*100vw 22/$s*100vw 0));
   }
 
   &__filters {
@@ -67,14 +67,15 @@
     align-items: center;
     justify-content: space-between;
 
-    @include rule(margin-top, (xl: 27px, sm: 36px));
+    @include rule(margin-top, (xl: 27/$x*100vw, lg: 27/$l*100vw, sm: 36/$s*100vw));
     @include rule(flex-wrap, (sm: wrap));
-    @include rule(margin-left, (sm: -21px));
-    @include rule(margin-right, (sm: -21px));
+    @include rule(margin-left, (sm: -21/$s*100vw));
+    @include rule(margin-right, (sm: -21/$s*100vw));
   }
 
   &__filter {
-    font-size: 18px;
+    @include rule(font-size, (xl: 18/$x*100vw, lg: 18/$l*100vw, sm: 18/$s*100vw));
+
     line-height: 1;
     font-weight: 500;
     text-transform: uppercase;
@@ -83,14 +84,14 @@
     transition: color $ease-main;
     display: inline-block;
 
-    @include rule(margin, (sm: 12px 21px));
+    @include rule(margin, (sm: 12/$s*100vw 21/$s*100vw));
 
     &.is-active, &:hover {
       color: white;
     }
 
     &:not(:last-child) {
-      @include rule(margin-right, (xl: 50px, lg: 41px, sm: 21px));
+      @include rule(margin-right, (xl: 50/$x*100vw, lg: 41/$l*100vw, sm: 21/$s*100vw));
     }
   }
 }

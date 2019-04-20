@@ -10,22 +10,21 @@
   }
 
   &__title {
-    @include rule(font-size, (xl: 34px, sm: 26px));
-    @include rule(line-height, (xl: 1, sm: 36px));
+    @include rule(font-size, (xl: 34/$x*100vw, lg: 34/$l*100vw, sm: 26/$s*100vw));
+    @include rule(line-height, (xl: 1, sm: 36/$s*100vw));
 
     font-weight: 600;
   }
 
   &__content {
-    @include rule(margin-top, (xl: 28px, sm: 22px));
-
-    font-size: 22px;
-    line-height: 32px;
+    @include rule(margin-top, (xl: 28/$x*100vw, lg: 28/$l*100vw, sm: 22/$s*100vw));
+    @include rule(font-size, (xl: 22/$x*100vw, lg: 22/$l*100vw, sm: 22/$s*100vw));
+    @include rule(line-height, (xl: 32/$x*100vw, lg: 32/$l*100vw, sm: 32/$s*100vw));
 
     p {
 
       &:not(:first-child) {
-        margin-top: 32px;
+        @include rule(margin-top, (xl: 32/$x*100vw, lg: 32/$l*100vw, sm: 32/$s*100vw));
       }
     }
   }
@@ -37,9 +36,9 @@
     }
 
     &_info {
-      @include rule(margin-left, (xl: 92px, lg: 0));
-      @include rule(margin-bottom, (lg: 58px, sm: 29px));
-      @include rule(width, (xl: 362px, lg: 100%));
+      @include rule(margin-left, (xl: 92/$x*100vw, lg: 0));
+      @include rule(margin-bottom, (lg: 58/$l*100vw, sm: 29/$s*100vw));
+      @include rule(width, (xl: 362/$x*100vw, lg: 100%));
       @include rule(display, (lg: flex, sm: block));
 
       flex-shrink: 0;
@@ -47,7 +46,7 @@
   }
 
   &__badges {
-    @include rule(margin, (xl: 17px -31px 0 0, lg: -25px -31px 0 110px, sm: 0 -15px 0));
+    @include rule(margin, (xl: 17/$x*100vw -31/$x*100vw 0 0, lg: -25/$l*100vw -31/$l*100vw 0 110/$l*100vw, sm: 0 -15/$s*100vw 0));
 
     font-size: 0;
 
@@ -55,21 +54,19 @@
 
     flex-shrink: 0;
 
-    @include rule(max-width, (lg: 230px, sm: none));
+    @include rule(max-width, (lg: 230/$l*100vw, sm: none));
     @include rule(width, (sm: auto));
     @include rule(text-align, (sm: center));
   }
 
   &__badge {
-    @include rule(margin-right, (xl: 31px, sm: 15px));
-    @include rule(margin-left, (sm: 15px));
-
-    margin-top: 31px;
-
+    @include rule(margin-right, (xl: 31/$x*100vw, lg: 31/$l*100vw, sm: 15/$s*100vw));
+    @include rule(margin-left, (sm: 15/$s*100vw));
+    @include rule(margin-top, (xl: 31/$x*100vw, lg: 31/$l*100vw, sm: 31/$s*100vw));
     @include rule(display, (sm: inline-block));
 
     img {
-      width: 84px;
+      @include rule(width, (xl: 84/$x*100vw, lg: 84/$l*100vw, sm: 84/$s*100vw));
     }
   }
 
@@ -80,21 +77,22 @@
   }
 
   &__item {
-    @include rule(font-size, (xl: 20px, sm: 18px));
+    @include rule(font-size, (xl: 20/$x*100vw, lg: 20/$l*100vw, sm: 18/$s*100vw));
+    @include rule(line-height, (xl: 28/$x*100vw, lg: 28/$l*100vw, sm: 28/$s*100vw));
 
-    line-height: 28px;
     letter-spacing: .025em;
     display: flex;
     flex-wrap: wrap;
 
     &:not(:first-child) {
-      @include rule(margin-top, (xl: 28px, lg: 33px, sm: 27px));
+      @include rule(margin-top, (xl: 28/$x*100vw, lg: 33/$l*100vw, sm: 27/$s*100vw));
     }
   }
 
   &__list-title {
     text-transform: uppercase;
-    margin-right: 5px;
+
+    @include rule(margin-right, (xl: 5/$x*100vw, lg: 5/$l*100vw, sm: 5/$s*100vw));
   }
 
   &__list-content {

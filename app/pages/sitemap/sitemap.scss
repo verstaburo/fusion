@@ -5,14 +5,14 @@
     display: block;
     transition: opacity $ease-main;
     color: $color-main;
-    font-size: 16px;
+    @include rule(font-size, (xl: 16/$x*100vw, lg: 16/$l*100vw, sm: 16/$s*100vw));
 
     &:hover {
       opacity: .5;
     }
 
     &:not(:first-child) {
-      margin-top: 15px;
+      @include rule(margin-top, (xl: 15/$x*100vw, lg: 15/$l*100vw, sm: 15/$s*100vw));
     }
   }
 }

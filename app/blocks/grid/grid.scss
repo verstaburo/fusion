@@ -7,11 +7,14 @@ $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной к
   font-size: 0;
   display: flex;
   flex-wrap: wrap;
-  margin: -$grid-gap-vertical (-$grid-gap/2) 0;
+
+  @include rule(margin, (xl: (-$grid-gap-vertical/$x*100vw) (-$grid-gap/2/$x*100vw) 0, lg: (-$grid-gap-vertical/$l*100vw) (-$grid-gap/2/$l*100vw) 0, sm: (-$grid-gap-vertical/$s*100vw) (-$grid-gap/2)/$s*100vw 0));
 
   &__col {
     box-sizing: border-box;
-    padding: $grid-gap-vertical $grid-gap/2 0;
+
+    @include rule(padding, (xl: ($grid-gap-vertical/$x*100vw) ($grid-gap/2/$x*100vw) 0, lg: ($grid-gap-vertical/$l*100vw) ($grid-gap/2/$l*100vw) 0, sm: ($grid-gap-vertical/$s*100vw) ($grid-gap/2/$s*100vw) 0));
+
     margin: 0;
 
     &_grow {

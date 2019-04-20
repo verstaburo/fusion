@@ -3,8 +3,8 @@
   background-color: white;
   color: $color-black;
 
-  @include rule(padding-top, (xl: 39px, sm: 28px));
-  @include rule(padding-bottom, (xl: 57px, lg: 62px, sm: 32px));
+  @include rule(padding-top, (xl: 39/$x*100vw, lg: 39/$l*100vw, sm: 28/$s*100vw));
+  @include rule(padding-bottom, (xl: 57/$x*100vw, lg: 62/$l*100vw, sm: 32/$s*100vw));
 
   $b: &;
 
@@ -15,7 +15,7 @@
   &__logo {
 
     img {
-      @include rule(width, (xl: 225px, lg: 157px));
+      @include rule(width, (xl: 225/$x*100vw, lg: 157/$l*100vw, sm: 157/$s*100vw));
     }
   }
 
@@ -27,7 +27,7 @@
     }
 
     &_contacts {
-      @include rule(max-width, (xl: 440px, lg: none));
+      @include rule(max-width, (xl: 440/$x*100vw, lg: none));
       @include rule(order, (lg: -2));
       @include rule(flex, (lg: 1));
     }
@@ -39,30 +39,33 @@
   }
 
   &__title {
-    @include rule(font-size, (xl: 20px, sm: 18px));
+    @include rule(font-size, (xl: 20/$x*100vw, lg: 20/$l*100vw, sm: 18/$s*100vw));
+    @include rule(line-height, (xl: 16/$x*100vw, lg: 16/$l*100vw, sm: 16/$s*100vw));
 
-    line-height: 16px;
     text-transform: uppercase;
     letter-spacing: .025em;
 
     &::after {
       content: '';
       display: block;
-      width: 48px;
-      height: 2px;
+
+      @include rule(width, (xl: 48/$x*100vw, lg: 48/$l*100vw, sm: 48/$s*100vw));
+      @include rule(height, (xl: 2/$x*100vw, lg: 2/$l*100vw, sm: 2/$s*100vw));
+
       background-color: $color-black;
 
-      @include rule(margin-top, (xl: 17px, sm: 18px));
+      @include rule(margin-top, (xl: 17/$x*100vw, lg: 17/$l*100vw, sm: 18/$s*100vw));
     }
   }
 
   &__content {
-    font-size: 14px;
-    line-height: 20px;
+    @include rule(font-size, (xl: 14/$x*100vw, lg: 14/$l*100vw, sm: 14/$s*100vw));
+    @include rule(line-height, (xl: 20/$x*100vw, lg: 20/$l*100vw, sm: 20/$s*100vw));
+
     color: black;
     font-family: $font-second;
 
-    @include rule(margin-top, (xl: 17px, sm: 19px));
+    @include rule(margin-top, (xl: 17/$x*100vw, lg: 17/$l*100vw, sm: 19/$s*100vw));
 
     letter-spacing: .015em;
 
