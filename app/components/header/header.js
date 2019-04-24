@@ -2,10 +2,13 @@
 const
   $ = window.$,
   button = $(document).find('.js-burger-button'),
-  menu = $(document).find('.js-burger-menu');
+  menu = $(document).find('.js-burger-menu'),
+  head = $(document).find('.header');
 
 export function showBurger () {
   button.addClass('is-active');
+  head.addClass('is-active');
+
   menu.show(0, function () {
     $(this).addClass('is-active');
   });
@@ -14,6 +17,7 @@ export function showBurger () {
 export function hideBurger () {
   button.removeClass('is-active');
   menu.removeClass('is-active');
+  head.removeClass('is-active');
 
   setTimeout(function () {
     menu.hide();
