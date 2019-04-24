@@ -25,7 +25,7 @@ export function hideBurger () {
 }
 
 export default function header() {
-  $(document).on('click', '.js-burger-button', function () {
+  button.click(function () {
     button.hasClass('is-active') ? hideBurger() : showBurger();
   });
 

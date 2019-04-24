@@ -16,5 +16,11 @@ $(() => {
   popups();
   works();
   header();
+
+  const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
+  if (iOS) {
+    $('body').addClass('iOS');
+  }
 });
 /* eslint-enable */

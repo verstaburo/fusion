@@ -99,3 +99,11 @@
 
   }
 }
+
+.iOS .project__item b {
+  @include screen('sm') {
+    display: inline-block;
+    max-width: 100%;
+    margin-top: -3/$s*100vw;
+  }
+}
