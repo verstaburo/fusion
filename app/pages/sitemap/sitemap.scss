@@ -5,6 +5,7 @@
     display: block;
     transition: opacity $ease-main;
     color: $color-main;
+
     @include rule(font-size, (xl: 16/$x*100vw, lg: 16/$l*100vw, sm: 16/$s*100vw));
 
     &:hover {
