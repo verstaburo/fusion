@@ -5,6 +5,7 @@ import './globalOptions';
 import anchor from '../blocks/js-functions/anchor';
 import popups from '../blocks/popups/popups';
 import works from '../components/works/works';
+import header from '../components/header/header';
 
 const $ = window.$;
 
@@ -14,5 +15,6 @@ $(() => {
   anchor();
   popups();
   works();
+  header();
 });
 /* eslint-enable */

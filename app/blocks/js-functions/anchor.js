@@ -2,6 +2,8 @@
 // При клике на .js-anchor страница плавно скроллится к блоку, указанному в его href
 const $ = window.$;
 
+import { hideBurger } from '../../components/header/header';
+
 export default function anchor() {
   $(document).on('click', '.js-anchor', function (e) {
     const target = $('#' + $(this).attr('href').split('#')[1]);
@@ -16,6 +18,8 @@ export default function anchor() {
               (target.offset().top + target.outerHeight() - $(window).height()) :
               target.offset().top,
         }, 1000, 'swing');
+
+        hideBurger();
       }, 1);
     }
   });

@@ -2,6 +2,7 @@
   display: block;
   background-color: white;
   color: $color-black;
+  overflow: hidden;
 
   @include rule(padding-top, (xl: 39/$x*100vw, lg: 39/$l*100vw, sm: 28/$s*100vw));
   @include rule(padding-bottom, (xl: 57/$x*100vw, lg: 62/$l*100vw, sm: 32/$s*100vw));

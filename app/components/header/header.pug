@@ -5,10 +5,10 @@ mixin header()
         img(src="assets/images/logo.png")
 
       +e.column
-        +e.burger-button
+        +e.burger-button.js-burger-button
           span
 
-        +e.menu
+        +e.menu.js-burger-menu
           each link in getData('menu')
             +e.A.link(href=link.href, class=(link.anchor ? 'js-anchor' : false), class=(link.filter ? 'js-filter' : false), data-filter=(link.filter ? 'all' : false))!= link.text
 

@@ -1,5 +1,6 @@
 .header {
   display: block;
+  overflow: hidden;
 
   @include rule(padding, (xl: 37/$x*100vw 0, lg: 43/$l*100vw 0, sm: 39/$s*100vw 0));
   @include rule(text-align, (sm: center));
@@ -19,6 +20,8 @@
     @include rule(margin-right, (xl: 60/$x*100vw, lg: 0));
     @include rule(margin-top, (lg: 30/$l*100vw, sm: 35/$s*100vw));
     @include rule(width, (sm: 100%));
+
+    position: relative;
   }
 
   &__logo {
@@ -30,13 +33,29 @@
   }
 
   &__menu {
-    @include rule(display, (xl: flex));
+    @include screen('sm', min) {
+      display: flex !important;
+    }
 
     align-items: center;
 
     @include rule(justify-content, (xl: space-between, sm: center));
-    @include rule(flex-wrap, (sm: wrap));
-    @include rule(margin, (sm: -13/$s*100vw -22/$s*100vw 0));
+
+    @include screen('sm') {
+      margin: 0;
+      position: absolute;
+      left: 0;
+      top: 51/$s*100vw;
+      right: 0;
+      background: black;
+      display: none;
+      transition: opacity $ease-main;
+      opacity: 0;
+
+      &.is-active {
+        opacity: 1;
+      }
+    }
   }
 
   &__link {
@@ -50,15 +69,23 @@
     transition: color $ease-main;
     display: block;
 
+    @include screen('sm') {
+      text-align: left;
+      padding-top: 12/$s*100vw;
+      padding-bottom: 12/$s*100vw;
+    }
+
     &.is-active, &:hover {
       color: white;
     }
 
     &:not(:last-child) {
-      @include rule(margin-right, (xl: 50/$x*100vw, lg: 49/$l*100vw, sm: 22/$s*100vw));
-    }
+      @include rule(margin-right, (xl: 50/$x*100vw, lg: 49/$l*100vw, sm: 0));
 
-    @include rule(margin, (sm: 22/$s*100vw 22/$s*100vw 0));
+      @include screen('sm') {
+        border-bottom: 2/$s*100vw solid white;
+      }
+    }
   }
 
   &__filters {
@@ -67,7 +94,7 @@
     align-items: center;
     justify-content: space-between;
 
-    @include rule(margin-top, (xl: 27/$x*100vw, lg: 27/$l*100vw, sm: 36/$s*100vw));
+    @include rule(margin-top, (xl: 27/$x*100vw, lg: 27/$l*100vw, sm: 25/$s*100vw));
     @include rule(flex-wrap, (sm: wrap));
     @include rule(margin-left, (sm: -21/$s*100vw));
     @include rule(margin-right, (sm: -21/$s*100vw));
@@ -92,6 +119,54 @@
 
     &:not(:last-child) {
       @include rule(margin-right, (xl: 50/$x*100vw, lg: 41/$l*100vw, sm: 21/$s*100vw));
+    }
+  }
+
+  &__burger-button {
+    width: 44/$s*100vw;
+    height: 28/$s*100vw;
+    @include rule(display, (xl: none, sm: block));
+    position: relative;
+    margin: 0 auto;
+
+    span, &::before, &::after {
+      height: 2/$s*100vw;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      margin-top: -1/$s*100vw;
+      left: 0;
+      display: block;
+      background: white;
+      border-radius: 1000/$s*100vw;
+      transition: transform $ease-main, opacity $ease-main;
+    }
+
+    &::before, &::after {
+      content: '';
+    }
+
+    &::before {
+      transform: translate3d(0, -13/$s*100vw, 0);
+    }
+
+    &::after {
+      transform: translate3d(0, 13/$s*100vw, 0);
+    }
+
+    &.is-active {
+      span {
+        opacity: 0;
+        transform: translate3d(5/$s*100vw, 0, 0);
+      }
+
+      &::before {
+        transform: translate3d(0, 0, 0) rotate(45deg);
+      }
+
+      &::after {
+        transform: translate3d(0, 0, 0) rotate(-45deg);
+      }
     }
   }
 }

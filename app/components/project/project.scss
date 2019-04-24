@@ -18,13 +18,13 @@
 
   &__content {
     @include rule(margin-top, (xl: 28/$x*100vw, lg: 28/$l*100vw, sm: 22/$s*100vw));
-    @include rule(font-size, (xl: 22/$x*100vw, lg: 22/$l*100vw, sm: 22/$s*100vw));
-    @include rule(line-height, (xl: 32/$x*100vw, lg: 32/$l*100vw, sm: 32/$s*100vw));
+    @include rule(font-size, (xl: 22/$x*100vw, lg: 22/$l*100vw, sm: 17/$s*100vw));
+    @include rule(line-height, (xl: 32/$x*100vw, lg: 32/$l*100vw, sm: 26/$s*100vw));
 
     p {
 
       &:not(:first-child) {
-        @include rule(margin-top, (xl: 32/$x*100vw, lg: 32/$l*100vw, sm: 32/$s*100vw));
+        @include rule(margin-top, (xl: 32/$x*100vw, lg: 32/$l*100vw, sm: 26/$s*100vw));
       }
     }
   }
