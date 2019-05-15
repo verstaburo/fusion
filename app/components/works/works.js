@@ -19,8 +19,8 @@ export default function works () {
       button = element,
       filter = button.data('filter'),
       works = $('.js-work'),
-      filteredWorks = filter === 'all' ? works : works.filter(`[data-work-type="${filter}"]`),
-      otherWorks = filter === 'all' ? false : works.filter(`:not([data-work-type="${filter}"])`);
+      filteredWorks = filter === 'all' ? works : works.filter(`[data-work-type*="${filter}"]`),
+      otherWorks = filter === 'all' ? false : works.filter(`:not([data-work-type*="${filter}"])`);
 
     $(document).find('.js-filter').removeClass('is-active');
     button.addClass('is-active');
