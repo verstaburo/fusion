@@ -66,14 +66,21 @@ export default function works () {
       pageHash = window.location.hash,
       filter = pageHash.split('#filter-')[1],
       myFilter = $(document).find(`.js-filter[data-filter="${filter}"]`),
-      url = $(document).find(ajaxContainer).data('url');
+      container = $(document).find(ajaxContainer),
+      url = container.data('url') || false;
 
     console.log(`Filter: ${filter ? filter : '-'}`);
 
-    if (pageHash && myFilter.length > 0) {
-      filterWork(myFilter);
+    if (container.length && !url) {
+
+      packeryInit();
+
     } else {
-      worksLoad(url, ajaxContainer);
+      if (pageHash && myFilter.length > 0) {
+        filterWork(myFilter);
+      } else {
+        worksLoad(url, ajaxContainer);
+      }
     }
   });
 };
