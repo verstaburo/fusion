@@ -3,41 +3,57 @@ const $ = window.$;
 
 import Packery from 'packery';
 
-export default function works () {
+const ajaxContainer = '.js-works-container';
+let grid;
+
+// Инициализация плагина
+function packeryInit() {
   if ($(document).find('.js-work').length === 0 || undefined) return;
 
-  const grid = new Packery('.js-works', {
+  grid = new Packery('.js-works', {
     itemSelector: '.js-work',
     columnWidth: '.js-work-sizer',
     percentPosition: true,
     transitionDuration: '.2s',
     horizontalOrder: false,
   });
+}
 
-  function filterWork(element) {
-    const
-      button = element,
-      filter = button.data('filter'),
-      works = $('.js-work'),
-      filteredWorks = filter === 'all' ? works : works.filter(`[data-work-type*="${filter}"]`),
-      otherWorks = filter === 'all' ? false : works.filter(`:not([data-work-type*="${filter}"])`);
+// Подгрузка контента
+export function worksLoad(url, container) {
+  console.log(`Works url: ${url}`);
+  $.ajax({
+    url: url,
+    method: 'get',
+    dataType: 'html',
+    success: function (data) {
+      $(document).find(container).html(data);
+      const newHTML = $(document).find(container).find('.works').html();
+      $(document).find(container).html(newHTML);
 
-    $(document).find('.js-filter').removeClass('is-active');
-    button.addClass('is-active');
+      packeryInit();
+    },
+    error: function (xhr, status, err) {
+      console.log(`XHR: ${xhr.responseText}; Status: ${status}; Error: ${err}`);
+    }
+  });
+}
 
-    filteredWorks.show(0, function () {
-      filteredWorks.removeClass('is-hidden');
+// Фильтрация
+export function filterWork(element) {
+  const
+    button = element,
+    filter = button.data('filter'),
+    container = $(document).find(ajaxContainer),
+    url = filter === 'all' ? container.data('url') : `${container.data('url')}?filter=${filter}`;
 
-      if (otherWorks) otherWorks.addClass('is-hidden');
-    });
+  $(document).find('.js-filter').removeClass('is-active');
+  button.addClass('is-active');
 
-    setTimeout(function () {
-      if (otherWorks) otherWorks.hide();
+  worksLoad(url, ajaxContainer);
+}
 
-      grid.layout();
-    }, 200);
-  }
-
+export default function works () {
   $(document).on('click', '.js-filter', function (e) {
     if ($(document).find('.js-filter-works').length === 0 || undefined) return;
 
@@ -49,13 +65,15 @@ export default function works () {
     const
       pageHash = window.location.hash,
       filter = pageHash.split('#filter-')[1],
-      myFilter = $(document).find(`.js-filter[data-filter="${filter}"]`);
+      myFilter = $(document).find(`.js-filter[data-filter="${filter}"]`),
+      url = $(document).find(ajaxContainer).data('url');
 
-    console.log(filter);
-    console.log(myFilter);
+    console.log(`Filter: ${filter ? filter : '-'}`);
 
     if (pageHash && myFilter.length > 0) {
       filterWork(myFilter);
+    } else {
+      worksLoad(url, ajaxContainer);
     }
   });
 };
