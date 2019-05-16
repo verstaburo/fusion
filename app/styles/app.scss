@@ -42,3 +42,11 @@ body {
   @include rule(padding-top, (xl: 41/$x*100vw, lg: 16/$l*100vw, sm: 9/$s*100vw));
   @include rule(padding-bottom, (xl: 41/$x*100vw, lg: 38/$l*100vw, sm: 38/$s*100vw));
 }
+
+.hide-sm {
+  @include rule(display, (xl: block, sm: none));
+}
+
+.show-sm {
+  @include rule(display, (xl: none, sm: block));
+}
